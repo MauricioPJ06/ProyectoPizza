@@ -1,0 +1,10 @@
+/* Carrito vacío */
+.carrito-vacio {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+/* Ocultar elementos*/
+.oculto {
+    display: none;
+}

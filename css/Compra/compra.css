@@ -1,0 +1,242 @@
+/*Propiedades del header*/
+        /*---------------------------------------------------------------------------------*/
+        header {
+            background: url('../../Imagenes/textura.jpg');
+            border: 5px solid brown;
+        }
+
+        header .row {
+            padding: 20px;
+        }
+
+        header .col-12.col-md-4:first-child {
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        header .col-12.col-md-4 img {
+            height: 4rem;
+            width: auto;
+            transition: border 0.1s ease;
+        }
+
+        header .col-12.col-md-4 img:hover {
+            border: black 2px solid;
+        }
+
+        header .col-12.col-md-4.align-items-center {
+            display: flex;
+            gap: 20px;
+            justify-content: end;
+            padding-right: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+        }
+
+        header .col-12.col-md-4.align-items-center a {
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        header .col-12.col-md-4.align-items-center a:hover {
+            color: white;
+        }
+
+        .icono {
+            fill: black;
+            transition: fill 0.3s ease;
+
+        }
+
+        .icono:hover {
+            fill: white;
+
+        }
+
+        /* Hace que la imagen siempre este en el centro y que los menus siempre se mantengan en el centro al tener pantalla pequeña*/
+        @media (max-width: 768px) {
+            header .col-12.col-md-4:first-child {
+                text-align: center;
+                padding-left: 0;
+            }
+
+            header .col-12.col-md-4.align-items-center {
+                justify-content: center;
+                padding-right: 0;
+            }
+        }
+
+        /*Propiedades del Footer*/
+        /*---------------------------------------------------------------------------------*/
+        footer {
+            background: url('../../Imagenes/textura.jpg');
+            padding: 20px;
+            border: 5px solid brown;
+        }
+
+        footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        footer h3 {
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        footer .col-12,
+        footer .col-6,
+        footer .col-md-4 {
+            padding: 20px;
+        }
+
+        /*Quita los bordes a las listas haciendo que sean transparentes*/
+        footer .list-group-item {
+            border: none;
+            background: transparent;
+            padding-left: 0;
+        }
+
+        /*Le da una animacion a los links al pasar el raton sobre ellos*/
+        footer .list-group-item a {
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .list-group-item a:hover {
+            color: white;
+            /* al pasar el mouse se pone blanco */
+        }
+
+        /*---------------------------------------------------------------------------------*/
+
+    :root {
+            --primary: #e74c3c;
+            --secondary: #f39c12;
+            --light: #f5f5f5;
+            --dark: #333;
+            --success: #2ecc71;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        .header-pizza {
+            background-color: var(--primary);
+        }
+        
+        .step-number {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #dee2e6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .step.active .step-number {
+            background-color: var(--primary);
+        }
+        
+        .step.completed .step-number {
+            background-color: var(--success);
+        }
+        
+        .step-text {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .step.active .step-text {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .delivery-option {
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .delivery-option:hover {
+            border-color: var(--secondary);
+        }
+        
+        .delivery-option.selected {
+            border-color: var(--primary);
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+        
+        .delivery-option i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #777;
+        }
+        
+        .delivery-option.selected i {
+            color: var(--primary);
+        }
+        
+        .order-summary-card, .form-section-card {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .order-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        
+        .order-total {
+            border-top: 2px solid #eee;
+            padding: 15px 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .store-locator, .address-form {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        
+        .form-section-card {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
