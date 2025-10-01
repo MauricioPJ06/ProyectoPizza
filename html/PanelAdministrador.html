@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Roles - Pizzería</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .sidebar {
+      height: 100vh;
+      width: 220px;
+      background-color: #212529;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 70px;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background: #495057;
+    }
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+   Nonna - Pizzas
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#" onclick="showContent('admin')"><i class="fa-solid fa-user-shield me-2"></i>Administrador</a>
+    <a href="#" onclick="showContent('cajero')"><i class="fa-solid fa-cash-register me-2"></i>Cajero</a>
+    <a href="#" onclick="showContent('mesero')"><i class="fa-solid fa-utensils me-2"></i>Mesero</a>
+    <a href="#" onclick="showContent('cocinero')"><i class="fa-solid fa-kitchen-set me-2"></i>Cocinero</a>
+    <a href="#" onclick="showContent('repartidor')"><i class="fa-solid fa-motorcycle me-2"></i>Repartidor</a>
+    <a href="#" onclick="showContent('proveedor')"><i class="fa-solid fa-truck me-2"></i>Proveedores</a>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content">
+    <div id="admin">
+      <h3><i class="fa-solid fa-user-shield"></i> Administrador General</h3>
+      <p>Control total del sistema: inventario, personal, reportes financieros, estadísticas de ventas.</p>
+    </div>
+
+    <div id="cajero" class="hidden">
+      <h3><i class="fa-solid fa-cash-register"></i> Cajero</h3>
+      <p>Gestión de caja, ventas del día, arqueo y cierre de caja.</p>
+    </div>
+
+    <div id="mesero" class="hidden">
+      <h3><i class="fa-solid fa-utensils"></i> Mesero</h3>
+      <p>Toma pedidos de clientes en mesas, coordina con la cocina y verifica entregas.</p>
+    </div>
+
+    <div id="cocinero" class="hidden">
+      <h3><i class="fa-solid fa-kitchen-set"></i> Cocinero</h3>
+      <p>Revisión de pedidos, preparación de pizzas y control de tiempos de entrega.</p>
+    </div>
+
+    <div id="repartidor" class="hidden">
+      <h3><i class="fa-solid fa-motorcycle"></i> Repartidor</h3>
+      <p>Gestión de pedidos a domicilio, rutas de entrega y confirmación de entregas realizadas.</p>
+    </div>
+
+    <div id="proveedor" class="hidden">
+      <h3><i class="fa-solid fa-truck"></i> Encargado de Proveedores</h3>
+      <p>Gestión de compras de insumos, control de perecibles y negociación con proveedores.</p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function showContent(section) {
+      let contents = document.querySelectorAll(".content > div"); /*Obtiene todos los divs que tengan ids dentro de content*/
+      contents.forEach(c => c.classList.add("hidden"));  /*Les añade la clase hidden, que los oculta*/
+      document.getElementById(section).classList.remove("hidden"); /*Al que tenga el id que pasamos en section le removemos el hidden para que sea visible*/
+    }
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
